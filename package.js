@@ -13,6 +13,7 @@ Package.onUse(function (api) {
   	    'session',
         'dessix:livescript-compiler',
         'dalgard:jade',
+        'tap:i18n',
         'raix:handlebar-helpers',
         'kevohagan:sweetalert'
       ]

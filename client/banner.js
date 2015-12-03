@@ -22,7 +22,10 @@ Meteor.startup(function(){
 		'connectionLostText': function(event, template){
 			var defaultText = "Connection to Server Lost!";
 			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionIndicator && Meteor.settings.public.connectionIndicator.connectionLostText)
-				return Meteor.settings.public.connectionIndicator.connectionLostText;
+				if (Meteor.settings.public.connectionIndicator.i18n)
+					return __(Meteor.settings.public.connectionIndicator.connectionLostText);
+				else
+					return Meteor.settings.public.connectionIndicator.connectionLostText;
 			else
 				return defaultText;
 		},
