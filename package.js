@@ -13,6 +13,7 @@ Package.onUse(function (api) {
   	    'session',
         'dessix:livescript-compiler',
         'dalgard:jade',
+        'raix:handlebar-helpers',
         'kevohagan:sweetalert'
       ]
 	  , 'client');
@@ -21,7 +22,7 @@ Package.onUse(function (api) {
           'client/banner.css',
           'client/banner.jade',
           'client/banner.js',
-          'client/alert.jade',
+          // 'client/alert.jade',
           'client/alert.ls',
         ]
       , 'client');

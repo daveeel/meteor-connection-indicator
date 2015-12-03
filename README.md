@@ -1,7 +1,7 @@
-meteor-connection-banner
+meteor-connection-indicator
 ========================
 
-A banner that displays when meteor server is disconnected with countdown and reconnect option.
+An indicator ( banner or alwert ) that displays when meteor server is disconnected with countdown and reconnect option.
 
 
 ## Usage
@@ -12,7 +12,7 @@ A banner that displays when meteor server is disconnected with countdown and rec
 
 -----
 
-This package will look best with supporting packages `font-awesome` and `bootstrap-3`
+Banner mode will look best with supporting packages `font-awesome` and `bootstrap-3`
 
 ![With font-awesome and bootstrap 3](images/with-fa-bs.png "With font-awesome and bootstrap 3")
 
@@ -65,34 +65,3 @@ And insert the template either directly before or after the navbar element, e.g.
   ...
 </div>
 ```
-
-
------
-
-## Version History
-
-###v0.4
-* Fixed a typo in default text
-* Text can now be cusomtized via `Meteor.settings`
-
-###v0.3
-* Eliminated extra update intervals, just 1 interval at any time now
-
-###v0.2
-* Adjustments to be blaze compatible
-* Renamed some element IDs
-```
-#meteor-connection-lost-banner -> #connection-lost-banner
-#meteor-connection-try-reconnect -> #connection-try-reconnect
-```
-* Renamed base template
-```
-meteorConnectionBanner -> connectionIndicator
-```
-* Removed handlebars helper in favor of sub template include
-```
-{{meteorConnectionBanner}} -> {{>connectionIndicator}}
-```
-
-###v0.1
-* Initial Release
