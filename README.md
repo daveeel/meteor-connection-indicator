@@ -1,7 +1,7 @@
 meteor-connection-indicator
 ========================
 
-An indicator ( banner or alwert ) that displays when meteor server is disconnected with countdown and reconnect option.
+An indicator ( banner or sweetalert ) that displays when meteor server is disconnected with countdown and reconnect option.
 
 
 ## Usage

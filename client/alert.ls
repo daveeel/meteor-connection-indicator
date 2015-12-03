@@ -3,7 +3,7 @@ Template.connectionIndicator.helpers do
     swal do
       * title: 'Disconnected!'
         text: msg
-        type: "success"
+        type: "warning"
 
   alert_reconnected: (msg) !->
     swal do

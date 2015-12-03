@@ -1,5 +1,5 @@
 Package.describe({
-    summary: "A banner / alert that displays when meteor server is disconnected with countdown and reconnect option",
+    summary: "Banner / Sweetalert that displays when meteor server is disconnected with countdown and reconnect option",
     name: "daveeel:connection-indicator",
     version: "0.4.3",
     git: "https://github.com/daveeel/meteor-connection-indicator.git"
@@ -22,7 +22,6 @@ Package.onUse(function (api) {
           'client/banner.css',
           'client/banner.jade',
           'client/banner.js',
-          // 'client/alert.jade',
           'client/alert.ls',
         ]
       , 'client');

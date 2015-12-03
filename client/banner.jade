@@ -2,9 +2,9 @@ template(name="connectionIndicator")
 	if $eq mode 'alert'
 		if wasConnected
 			if isDisconnected
-				{{ alert_disconnected connectionLostText }}
+				| {{ alert_disconnected connectionLostText }}
 			else
-				{{ alert_reconnected }}
+				| {{ alert_reconnected }}
 	else
 		if wasConnected
 			if isDisconnected
