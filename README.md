@@ -6,7 +6,9 @@ A banner that displays when meteor server is disconnected with countdown and rec
 
 ## Usage
 
-`{{>connectionBanner}}`  (best located right after the opening body tag)
+`{{>connectionIndicator}}`  (default banner mode, best located right after the opening body tag)
+
+`{{>connectionIndicator mode='alert'}}`  (sweetalert mode, no screen space required)
 
 -----
 
@@ -29,7 +31,7 @@ The connection banner will attempt to fetch custom text from `Meteor.settings`. 
 ```
 {
 	"public":{
-		"connectionBanner":{
+		"connectionIndicator":{
 			"connectionLostText":"Ooops. Something is wrong.",
 			"tryReconnectText":"Try to reconnect now",
 			"reconnectBeforeCountdownText":"Attempting to reconnect in",
@@ -45,7 +47,7 @@ Settings are only required if you desire customized text
 
 ####Using with a Bootstrap Fixed Top Navbar
 
-If you have a fixed navbar at the top of the page, the connectionBanner will render invisibly behind it. You can use the following CSS to move the navbar down if the banner is rendered (or appear below the navbar).
+If you have a fixed navbar at the top of the page, the connectionIndicator will render invisibly behind it. You can use the following CSS to move the navbar down if the banner is rendered (or appear below the navbar).
 ```
 #connection-lost-banner + .navbar-fixed-top,
 #connection-try-reconnect + .navbar-fixed-top {
@@ -58,7 +60,7 @@ If you have a fixed navbar at the top of the page, the connectionBanner will ren
 ```
 And insert the template either directly before or after the navbar element, e.g.:
 ```
-{{>connectionBanner}}
+{{>connectionIndicator}}
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   ...
 </div>
@@ -85,11 +87,11 @@ And insert the template either directly before or after the navbar element, e.g.
 ```
 * Renamed base template
 ```
-meteorConnectionBanner -> connectionBanner
+meteorConnectionBanner -> connectionIndicator
 ```
 * Removed handlebars helper in favor of sub template include
 ```
-{{meteorConnectionBanner}} -> {{>connectionBanner}}
+{{meteorConnectionBanner}} -> {{>connectionIndicator}}
 ```
 
 ###v0.1

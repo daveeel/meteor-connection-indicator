@@ -1,0 +1,10 @@
+template(name='connectionAlert')
+  if wasConnected
+    if isDisconnected
+      +_alert
+      
+template(name='_alert_disconnected')
+  #connection-lost-alert
+  
+template(name='_alert_reconnected')
+  #connection-okay-alert

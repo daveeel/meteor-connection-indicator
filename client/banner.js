@@ -1,12 +1,12 @@
 Meteor.startup(function(){
-	Template.connectionBanner.events({
+	Template.connectionIndicator.events({
 		'click #connection-try-reconnect': function(event, template){
 			event.preventDefault();
 			Meteor.reconnect();
 		}
 	});
 
-	Template.connectionBanner.helpers({
+	Template.connectionIndicator.helpers({
 		'wasConnected': function(event, template){
 			return Session.equals('MeteorConnection-wasConnected', true);
 		},
@@ -21,29 +21,29 @@ Meteor.startup(function(){
 		},
 		'connectionLostText': function(event, template){
 			var defaultText = "Connection to Server Lost!";
-			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.connectionLostText)
-				return Meteor.settings.public.connectionBanner.connectionLostText;
+			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionIndicator && Meteor.settings.public.connectionIndicator.connectionLostText)
+				return Meteor.settings.public.connectionIndicator.connectionLostText;
 			else
 				return defaultText;
 		},
 		'tryReconnectText': function(event, template){
 			var defaultText = "Click to try reconnecting now";
-			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.tryReconnectText)
-				return Meteor.settings.public.connectionBanner.tryReconnectText;
+			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionIndicator && Meteor.settings.public.connectionIndicator.tryReconnectText)
+				return Meteor.settings.public.connectionIndicator.tryReconnectText;
 			else
 				return defaultText;
 		},
 		'reconnectBeforeCountdownText': function(event, template){
 			var defaultText = "Automatically attempting to reconnect in";
-			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.reconnectBeforeCountdownText)
-				return Meteor.settings.public.connectionBanner.reconnectBeforeCountdownText;
+			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionIndicator && Meteor.settings.public.connectionIndicator.reconnectBeforeCountdownText)
+				return Meteor.settings.public.connectionIndicator.reconnectBeforeCountdownText;
 			else
 				return defaultText;
 		},
 		'reconnectAfterCountdownText': function(event, template){
 			var defaultText = "seconds.";
-			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionBanner && Meteor.settings.public.connectionBanner.reconnectAfterCountdownText)
-				return Meteor.settings.public.connectionBanner.reconnectAfterCountdownText;
+			if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.connectionIndicator && Meteor.settings.public.connectionIndicator.reconnectAfterCountdownText)
+				return Meteor.settings.public.connectionIndicator.reconnectAfterCountdownText;
 			else
 				return defaultText;
 		}
@@ -78,4 +78,3 @@ Meteor.startup(function(){
 		Session.set('MeteorConnection-isConnected', isConnected);
 	});
 });
-	

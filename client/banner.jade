@@ -1,0 +1,20 @@
+template(name="connectionIndicator")
+	if $eq mode 'alert'
+		if wasConnected
+			if isDisconnected
+				+_alert_disconnected
+			else
+				+_alert_reconnected
+	else
+		if wasConnected
+			if isDisconnected
+				#connection-lost-banner.alert.alert-danger
+					b
+						i.fa.fa-exclamation-triangle.fa-lg {{connectionLostText}} 
+					| &nbsp;&nbsp;
+					| {{reconnectBeforeCountdownText}} {{retryTimeSeconds}} {{reconnectAfterCountdownText}} &nbsp;&nbsp;
+					a#connection-try-reconnect.alert-link(href="#")
+						i.fa.fa-refresh.fa-lg {{tryReconnectText}}
+					if failedReason
+						br 
+						| {{failedReason}}
